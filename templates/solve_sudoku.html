@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数独求解</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='solve_sudoku_style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">数独求解</h1>
+        <div class="sudoku-grid mt-4">
+            <!-- 数独表格将在这里生成 -->
+        </div>
+        <div class="text-center mt-4">
+            <button id="clearButton" class="btn btn-warning">清空</button>
+            <button id="getAnswerButton" class="btn btn-success">获取题解</button>
+        </div>
+        <div class="text-center mt-2">
+            <button id="backButton" class="btn btn-primary">返回</button>
+        </div>
+    </div>
+
+    <!-- 验证模态框 -->
+    <div class="modal fade" id="validationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">提示</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="validationResult"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2023  V1.0.0</p>
+    </footer>
+
+    <!-- 外部 JavaScript 文件 -->
+    <script src="{{ url_for('static', filename='solve_sudoku_script.js') }}"></script>
+</body>
+</html>
